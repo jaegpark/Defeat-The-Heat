@@ -8,9 +8,12 @@ import java.awt.event.ActionEvent;
 
 /**
  * This is the SplashScreen class that fades the company logo and game logo in and out for the game.
+ * <h2>Course Info: </h2>
+ * ICS4U0 with Ms. Krasteva
  *
  * @author Jae Park
  * @version 1.0, 2019-05-24
+ * Created basic framework and functionality.
  *
  */
 public class SplashScreen extends JPanel {
@@ -43,8 +46,6 @@ public class SplashScreen extends JPanel {
         // Retrieves the images used for the company logo and game logo.
         splash = DefeatTheHeat.imageFromFile("Main/SplashScreen.png");
         splash2 = DefeatTheHeat.imageFromFile("Main/SplashScreen2.png");
-
-        // TODO: Add an animation skip button?
     }
 
     /**

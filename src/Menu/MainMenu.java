@@ -4,9 +4,7 @@ import Main.DefeatTheHeat;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 
 /**
@@ -44,63 +42,71 @@ public class MainMenu extends JPanel {
      */
     public MainMenu() {
         choseValid = false;
-        selected = -11;
+        selected = 0;
 
         InputMap newInput = getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
 
-        displayedOptions = new MenuOption[3];
-        displayedOptions[0] = new MenuOption("Menu/newGame.png", new Point(300, 200));
-        displayedOptions[1] = new MenuOption("Menu/continueGame.png", new Point(300, 300));
-        displayedOptions[2] = new MenuOption("Menu/exit.png", new Point(300, 400));
-
-        // Retrieves the menu background from the file location
-        backgroundImage = DefeatTheHeat.imageFromFile("Menu/MainMenu1.png");
-        selector = DefeatTheHeat.imageFromFile("Menu/selector.png");
-        //TODO: Fix the bug where the underline pointer is redrawing itself at the first location
-        addMouseListener(new MouseAdapter() {
+        newInput.clear();
+        getActionMap().clear();
+        newInput.put(KeyStroke.getKeyStroke('w'), "up");
+        newInput.put(KeyStroke.getKeyStroke("UP"), "up");
+        newInput.put(KeyStroke.getKeyStroke('s'), "down");
+        newInput.put(KeyStroke.getKeyStroke("DOWN"), "down");
+        newInput.put(KeyStroke.getKeyStroke("ENTER"), "select");
+        getActionMap().put("up", new AbstractAction() {
             @Override
-            public void mouseClicked(MouseEvent m) {
-                if (m.getX() > 300 && m.getX() < 600 && m.getY() > 200 && m.getY() < 307) {
-                    selected = 0;
-                    repaint();
-                    choseValid = true;
-                } else if (m.getX() > 300 && m.getX() < 600&& m.getY() > 307 && m.getY()<414) {
-                    selected = 1;
-                    repaint();
-                    choseValid = true;
-
-                } else if (m.getX() > 300 && m.getX() < 600&& m.getY() > 414 && m.getY()<521) {
-                    selected = 2;
-                    repaint();
-                    choseValid = true;
+            public void actionPerformed(ActionEvent e) {
+                if (selected > 0) {
+                    selected--;
                 }
+                repaint();
             }
         });
+        getActionMap().put("down", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (selected < 2) {
+                    selected++;
+                }
+                repaint();
+            }
+        });
+        getActionMap().put("select", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                choseValid = true;
+            }
+        });
+        displayedOptions = new MenuOption[3];
+        displayedOptions[0] = new MenuOption("Menu/newGame.png", new Point(280, 200));
+        displayedOptions[1] = new MenuOption("Menu/continueGame.png", new Point(300, 300));
+        displayedOptions[2] = new MenuOption("Menu/exit.png", new Point(340, 400));
 
+        // Retrieves the menu background from the file location
+        backgroundImage = DefeatTheHeat.imageFromFile("Menu/mainMenu2.png");
     }
 
     @Override
     public void paintComponent(Graphics g) {
         DefeatTheHeat.graphics = (Graphics2D) g;
         g.drawImage(backgroundImage, 0, 0, null);
-        for (MenuOption cur : displayedOptions)
-            cur.draw();
-        g.drawImage(selector, 290, 200+selected*107+40, null);
+        for (int i = 0; i < displayedOptions.length; i++) {
+            if (i == selected) {
+                displayedOptions[i].enlarge();
+            } else displayedOptions[i].draw();
+        }
     }
 
+    /**
+     * This method determines the user selection in the main menu.
+     *
+     * @return - returns the int value of the selected option of the user in the main menu.
+     */
     public int getOption() {
         revalidate();
         repaint();
         while (!choseValid) ;
+        getActionMap().clear();
         return selected;
     }
-
-    public void checkLocation(int x, int y) {
-        if (x > 300 && x < 600) {
-            if (y > 200 && y < 307) {
-
-            }
-        }
-    }
-
 }
