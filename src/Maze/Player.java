@@ -12,7 +12,7 @@ import java.awt.*;
  *
  * @author Jae Park
  * @version 1.0
- * 1
+ *
  * Created framework and functionality.
  */
 public class Player {
@@ -29,6 +29,9 @@ public class Player {
      */
     public int y;
 
+    /**
+     * The image of the heart that shows the Health Points of the player.
+     */
     public Image hp;
 
     /**

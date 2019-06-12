@@ -17,10 +17,7 @@ import java.awt.event.ActionEvent;
  * Copied the contents of the MainMenu class, and re-initialized the methods for the different usage.
  */
 public class ContinueMenu extends JLabel {
-    /**
-     * The image of the menu background.
-     */
-    private Image backgroundImage;
+
     /**
      * The list of menu options.
      */
@@ -85,9 +82,6 @@ public class ContinueMenu extends JLabel {
     @Override
     public void paintComponent(Graphics g) {
         DefeatTheHeat.graphics = (Graphics2D) g;
-        //g.drawImage(backgroundImage, 0, 0, null);
-        //g.setColor(Color.LIGHT_GRAY);
-        //g.fillRect(0,0,getWidth(),getHeight());
         for (int i = 0; i < displayedOptions.length; i++) {
             if (i == selected) {
                 displayedOptions[i].enlarge();

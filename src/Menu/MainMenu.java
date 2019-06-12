@@ -9,9 +9,13 @@ import java.awt.event.*;
 
 /**
  * The MainMenu class, which displays game options to the user.
+ * <h2>Course Info: </h2>
+ * ICS4U0 with Ms. Krasteva
  *
  * @author Jae Park
  * @version 1.0, 2019-05-24
+ * Created basic framework and completed functionality.
+ *
  */
 public class MainMenu extends JPanel {
 
@@ -32,10 +36,7 @@ public class MainMenu extends JPanel {
      * Whether the user has selected their option or not
      */
     private volatile boolean choseValid;
-    /**
-     * The image to indicate the selected option
-     */
-    private Image selector;
+
 
     /**
      * Default constructor - constructs the JPanel

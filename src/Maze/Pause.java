@@ -1,14 +1,16 @@
 package Maze;
 
-import Main.DefeatTheHeat;
 import Menu.MenuOption;
 import java.awt.*;
-import java.util.*;
 
 /**
  * The Pause class for the pause menu
+ * <h2>Course Info: </h2>
+ * ICS4U0 with Ms. Krasteva
  *
  * @author Jae Park
+ * @version 1.0
+ * Created basic framework and finished everything.
  */
 public class Pause {
 
@@ -23,7 +25,7 @@ public class Pause {
     public Image background;
 
     /**
-     * The list of menuoptions in the pause menu.
+     * The list of menu options in the pause menu.
      */
     public MenuOption[] options;
 

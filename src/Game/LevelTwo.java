@@ -181,11 +181,13 @@ public class LevelTwo {
     }
 
 
+    //version 4.0 June 9 addition, mouse listener for JLabel moved to this method to organize constructor
     /**
-     * This method TODO: HERE
+     * This method sets a mouse listener for the JLabel used as the background. It is used with the DragAndDrop
+     * and RandomFires objects to erase fires.
      *
-     * @param dr
-     * @param theTask
+     * @param dr The DragAndDrop object used to move the images.
+     * @param theTask The TimerTask object, assigned to a RandomFires object.
      */
     private void setClickProcessing(DragAndDrop dr, TimerTask theTask) {
         label.addMouseListener(new MouseAdapter() {

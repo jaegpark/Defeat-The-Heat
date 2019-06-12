@@ -14,7 +14,7 @@ import java.util.*;
  *
  * @author Jae Park
  *
- * @version 9.0
+ * @version 10.0
  * Version history:
  * 1
  * Created basic framework.
@@ -34,6 +34,8 @@ import java.util.*;
  * Finished the javadoc.
  * 9
  * Added the rules panel in the beginning of the game.
+ * 10
+ * Made the image paths case-sensitive since it was causing bugs in the jar executable.
  */
 public class Maze extends JPanel {
 
@@ -270,22 +272,22 @@ public class Maze extends JPanel {
                     if (i == 0) {
                         g.drawString("1-WATER", 700, 20);
                         g.drawString("EXTINGUISHER", 670, 40);
-                        g.drawString("For wood, cloth,", 685, 80);
-                        g.drawString("coal, plastics, and", 675, 100);
-                        g.drawString("other solid fires.", 680, 120);
+                        g.drawString("For wood, cloth,", 680, 80);
+                        g.drawString("coal, plastics, and", 670, 100);
+                        g.drawString("other solid fires.", 675, 120);
                     } else if (i == 1) {
                         g.drawString("2-POWDER", 700, 170);
                         g.drawString("EXTINGUISHER", 670, 190);
-                        g.drawString("For gas fires.", 685, 230);
+                        g.drawString("For gas fires.", 680, 230);
                     } else if (i == 2) {
                         g.drawString("3-FOAM", 700, 320);
                         g.drawString("EXTINGUISHER", 670, 340);
-                        g.drawString("For liquid fires.", 685, 380);
+                        g.drawString("For liquid fires.", 680, 380);
                     } else if (i == 3) {
                         g.drawString("4-Carbon Dioxide", 670, 470);
                         g.drawString("EXTINGUISHER", 670, 490);
-                        g.drawString("For electrical", 685, 530);
-                        g.drawString("fires.", 700, 550);
+                        g.drawString("For electrical", 680, 530);
+                        g.drawString("fires.", 695, 550);
                     }
                 } else {
                     items.get(i).draw();

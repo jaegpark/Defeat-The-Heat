@@ -58,7 +58,6 @@ public class DefeatTheHeat {
     public static BufferedImage imageFromFile(String path) {
         try {
             URL resource = DefeatTheHeat.class.getClassLoader().getResource(path);
-            System.out.println(resource);
             if (resource == null) throw new NullPointerException();
             return ImageIO.read(resource);
         } catch (IOException e) {
@@ -143,7 +142,7 @@ public class DefeatTheHeat {
                                 break;
                             }
                         }
-                        entireFrame.getContentPane().setPreferredSize(new Dimension(800, 600));
+                        entireFrame.getContentPane().setSize(new Dimension(800, 600));
                         Maze maze = new Maze();
                         entireFrame.setContentPane(maze);
                         entireFrame.setVisible(true);
@@ -177,7 +176,7 @@ public class DefeatTheHeat {
                                     break;
                                 }
                             }
-                            entireFrame.getContentPane().setPreferredSize(new Dimension(800, 600));
+                            entireFrame.getContentPane().setSize(new Dimension(800, 600));
                             Maze maze = new Maze();
                             entireFrame.setContentPane(maze);
                             entireFrame.setVisible(true);
@@ -231,7 +230,7 @@ public class DefeatTheHeat {
                                     break;
                                 }
                             }
-                            entireFrame.getContentPane().setPreferredSize(new Dimension(800, 600));
+                            entireFrame.getContentPane().setSize(new Dimension(800, 600));
                             Maze maze = new Maze();
                             entireFrame.setContentPane(maze);
                             entireFrame.setVisible(true);

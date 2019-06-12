@@ -16,7 +16,7 @@ import java.awt.*;
  *
  * @version 2.0
  * 1
- * Created basic frameowrk and functionality.
+ * Created basic framework and functionality.
  * 2
  * Changed the MenuOption class to extend JLabel for compatibility with
  * transitions in levels 1 and 2.

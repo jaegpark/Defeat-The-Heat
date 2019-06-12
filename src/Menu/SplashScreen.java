@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
  *
  * @author Jae Park
  * @version 1.0, 2019-05-24
+ *
  * Created basic framework and functionality.
  *
  */

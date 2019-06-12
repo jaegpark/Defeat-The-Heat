@@ -79,6 +79,8 @@ public class LevelOne
      * <b> levelOnePic </b> The ImageIcon used as graphics for level one.
      * <p>
      * <b> label </b> Contains the level one image in a format that can be added to a JFrame.
+     *
+     * @param theFrame The JFrame on which the graphics are displayed.
      */
     public LevelOne (JFrame theFrame) //version 4.0 June 8 modification, avoids creating a new window
     {
