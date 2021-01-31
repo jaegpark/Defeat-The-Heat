@@ -1,10 +1,20 @@
 # Defeat-The-Heat
 
-This is a game I developed in Java, using imported swing and awt libraries.
+As a culminative project, my friend Rohan and I developed in Java, using imported swing and awt libraries. 
+It teaches users about fire safety, through three levels (learning, application, extension). The user navigates the game using keyboard and mouse I/O.
 
-It teaches users about fire safety, and takes in keyboard and mouse I/O.
+For one month, we divided the work like so:
+
+Rohan:
+- Levels One and Two
+- Graphics for those respective levels
+
+Jae (myself):
+- Level Three (maze)
+- Main menu navigation and graphics
+- Putting the game together, including intricacies like the pause menu and such
 
 
 To run the game, ensure that a JRE version 8 or newer is installed on the device.
 
-A caution: Very low resolutions may cause off screen text in the third level.
+Caution: Very low resolutions may cause off screen text in the third level.
