@@ -1,6 +1,6 @@
 # Defeat-The-Heat
 
-As a culminative project, my friend Rohan and I developed in Java, using imported swing and awt libraries. 
+As a culminative project, my friend Rohan and I developed DefeatTheHeat in Java, using imported swing and awt libraries. 
 It teaches users about fire safety, through three levels (learning, application, extension). The user navigates the game using keyboard and mouse I/O.
 
 Rather than having a large game class, we used Object-Oriented Programming techniques of creating multiple classes that worked together. 
